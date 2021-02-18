@@ -18,7 +18,10 @@ public class StageDestroyerScript : MonoBehaviour
 
   void OnCollisionEnter(Collision other)
   {
-    Destroy(other.gameObject);
-    Debug.Log("Destroyed");
+    if (GameObject.FindWithTag("stage"))
+    {
+      Destroy(other.gameObject);
+      Debug.Log("Destroyed");
+    }
   }
 }
