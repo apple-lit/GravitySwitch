@@ -25,10 +25,9 @@ public class ColliderScript : MonoBehaviour
     {
       Debug.Log("GameOver");
       Instantiate(particleObject, this.transform.position, Quaternion.identity);
-      //   _stageStop.speed = 0;
+      _stageStop.speed = 0;
       Destroy(this.gameObject);
 
     }
-    _stageStop.speed = 0;
   }
 }
