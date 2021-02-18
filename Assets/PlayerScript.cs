@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     bool gravityUp = false;
-      public GameObject particleObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +26,5 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
-
-    void OnCollisionEnter(Collision collision){
-        if(GameObject.FindWithTag("collider")){
-            Destroy(this.gameObject);
-            Instantiate(particleObject, this.transform.position, Quaternion.identity);
-        }
-    }
-
 
 }

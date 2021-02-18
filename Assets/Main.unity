@@ -5926,6 +5926,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3167724239575848939, guid: 7364eeb564e6e452c9ba2a3bea11d222,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7364eeb564e6e452c9ba2a3bea11d222, type: 3}
 --- !u!1001 &3802469069057214023
@@ -5940,6 +5945,11 @@ PrefabInstance:
       propertyPath: particleObject
       value: 
       objectReference: {fileID: 125237918}
+    - target: {fileID: 3885481583568037761, guid: c9183bfe9962f417fbb285cce247628d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1757306165344080663, guid: c9183bfe9962f417fbb285cce247628d,
         type: 3}
       propertyPath: m_Name

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StageDestroyerScript : MonoBehaviour
 {
+
   // Start is called before the first frame update
   void Start()
   {
@@ -18,10 +19,8 @@ public class StageDestroyerScript : MonoBehaviour
 
   void OnCollisionEnter(Collision other)
   {
-    if (GameObject.FindWithTag("stage"))
-    {
-      Destroy(other.gameObject);
-      Debug.Log("Destroyed");
-    }
+
+    Destroy(other.gameObject);
+
   }
 }
