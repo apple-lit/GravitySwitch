@@ -57,7 +57,9 @@
   <ItemGroup>
      <Compile Include="Assets\ColliderScript.cs" />
      <Compile Include="Assets\PlayerScript.cs" />
+     <Compile Include="Assets\StageDestroyerScript.cs" />
      <Compile Include="Assets\StageManagerScript.cs" />
+     <Compile Include="Assets\StageMoveScript.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/rintarokudo/Desktop/仕事/Life is Tech!/LA/UnityProjects/GravitySwitch/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
