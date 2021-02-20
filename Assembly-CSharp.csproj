@@ -55,11 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ColliderScript.cs" />
-     <Compile Include="Assets\PlayerScript.cs" />
-     <Compile Include="Assets\StageDestroyerScript.cs" />
-     <Compile Include="Assets\StageManagerScript.cs" />
-     <Compile Include="Assets\StageMoveScript.cs" />
+     <Compile Include="Assets\Scripts\ColliderScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\StageDestroyerScript.cs" />
+     <Compile Include="Assets\Scripts\StageManagerScript.cs" />
+     <Compile Include="Assets\Scripts\StageMoveScript.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/rintarokudo/Desktop/仕事/Life is Tech!/LA/UnityProjects/GravitySwitch/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

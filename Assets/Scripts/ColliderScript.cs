@@ -6,10 +6,13 @@ public class ColliderScript : MonoBehaviour
 {
 
   public GameObject particleObject;
+  GameObject Cube;
   //   StageMoveScript _stageStop;
   StageMoveScript _stageMoveScript;
   StageManagerScript _stageManagerScript;
-  public Text gameOverText;
+
+  Rigidbody _rb;
+  //   public Text gameOverText;
 
   // Start is called before the first frame update
   void Start()
@@ -44,7 +47,10 @@ public class ColliderScript : MonoBehaviour
       Destroy(this.gameObject);
       GameObject childParticle = GameObject.Find("ParticleOnPlayer");
       Destroy(childParticle);
-      gameOverText = SetActive(true);
+      _rb = GameObject.Find("Cube").GetComponent<Rigidbody>();
+      _rb.useGravity = false;
+
+      //   gameOverText = SetActive(true);
     }
   }
 }
