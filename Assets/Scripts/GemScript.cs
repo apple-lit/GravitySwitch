@@ -6,6 +6,8 @@ public class GemScript : MonoBehaviour
 {
 
   public GameObject gem;
+
+
   public float count = 4.0f;
   public float speed = 3.0f;
   // Start is called before the first frame update
@@ -36,4 +38,7 @@ public class GemScript : MonoBehaviour
 
     }
   }
+
+
+
 }
