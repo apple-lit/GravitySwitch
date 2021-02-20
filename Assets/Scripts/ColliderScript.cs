@@ -17,20 +17,19 @@ public class ColliderScript : MonoBehaviour
 
   public int highScore = 0;
 
-
-
   Rigidbody _rb;
 
   // Start is called before the first frame update
   void Start()
   {
     highScore = PlayerPrefs.GetInt("SCORE", 0);
+
   }
 
   // Update is called once per frame
   void Update()
   {
-
+    print(highScore);
   }
   void OnCollisionEnter(Collision collision)
   {
@@ -79,7 +78,7 @@ public class ColliderScript : MonoBehaviour
         PlayerPrefs.Save();
 
       }
-      print(highScore);
+      // print(highScore);
     }
 
 
