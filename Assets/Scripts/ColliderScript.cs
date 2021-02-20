@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ColliderScript : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class ColliderScript : MonoBehaviour
   StageManagerScript _stageManagerScript;
 
   GemScript _gemScript;
+  PlayerScript _playerScript;
+
+  // public int highScore;
+  // public List<int> highScoreList = new List<int>();
+
 
   Rigidbody _rb;
   //   public Text gameOverText;
@@ -61,7 +67,15 @@ public class ColliderScript : MonoBehaviour
       _rb = GameObject.Find("Cube").GetComponent<Rigidbody>();
       _rb.useGravity = false;
 
-      //   gameOverText = SetActive(true);
+
+      // GameObject highScore = GameObject.Find("Cube");
+      // _playerScript = highScore.GetComponent<PlayerScript>();
+
+      // highScoreList.Add(_playerScript.score);
+
+      // highScore = highScoreList.Max();
+
+      // print(highScore);
     }
   }
 }

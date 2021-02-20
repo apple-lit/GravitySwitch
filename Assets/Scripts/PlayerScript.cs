@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
   bool gravityUp = false;
+  public Text scoreText;
+  public int score;
   // Start is called before the first frame update
   void Start()
   {
@@ -29,6 +32,21 @@ public class PlayerScript : MonoBehaviour
         gravityUp = false;
       }
     }
+  }
+
+
+  void OnTriggerEnter(Collider other)
+  {
+
+    if (other.CompareTag("gem"))
+    {
+      score += 1;
+      scoreText.text = score.ToString();
+      Destroy(other.gameObject);
+    }
+    // }
+
+
   }
 
 }
