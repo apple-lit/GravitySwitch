@@ -17,4 +17,6 @@ public class StageMoveScript : MonoBehaviour
     transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
     // print(speed);
   }
+
+
 }

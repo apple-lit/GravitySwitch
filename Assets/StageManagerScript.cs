@@ -20,7 +20,7 @@ public class StageManagerScript : MonoBehaviour
   public GameObject stageButtom06;
   public float stageSpeed = 3.0f;
 
-  private float countDown = 4.0f;
+  public float countDown = 4.0f;
 
 
   // ステージ用の配列
