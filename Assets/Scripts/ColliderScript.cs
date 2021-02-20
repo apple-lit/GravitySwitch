@@ -11,6 +11,8 @@ public class ColliderScript : MonoBehaviour
   StageMoveScript _stageMoveScript;
   StageManagerScript _stageManagerScript;
 
+  GemScript _gemScript;
+
   Rigidbody _rb;
   //   public Text gameOverText;
 
@@ -31,12 +33,21 @@ public class ColliderScript : MonoBehaviour
     {
       Debug.Log("GameOver");
       Instantiate(particleObject, this.transform.position, Quaternion.identity);
-      //   _stageStop = GameObject.FindWithTag("stage").GetComponent<StageMoveScript>();
-      //   _stageStop.speed = 0;
       GameObject[] stop = GameObject.FindGameObjectsWithTag("stage");
       GameObject noMoreStage = GameObject.Find("StageManager");
       _stageManagerScript = noMoreStage.GetComponent<StageManagerScript>();
       _stageManagerScript.countDown = 200000;
+
+      GameObject[] gemsStop = GameObject.FindGameObjectsWithTag("gem");
+      GameObject gemManager = GameObject.Find("GemManager");
+
+
+      foreach (var gems in gemsStop)
+      {
+        _gemScript = gemManager.GetComponent<GemScript>();
+        _gemScript.speed = 0;
+        _gemScript.count = 200000;
+      }
 
       foreach (var stage in stop)
       {

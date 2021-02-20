@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ColliderScript.cs" />
+     <Compile Include="Assets\Scripts\GemScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\StageDestroyerScript.cs" />
      <Compile Include="Assets\Scripts\StageManagerScript.cs" />
