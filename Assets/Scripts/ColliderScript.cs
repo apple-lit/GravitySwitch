@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
+using UnityEngine.UI;
 
 public class ColliderScript : MonoBehaviour
 {
@@ -15,17 +15,16 @@ public class ColliderScript : MonoBehaviour
   GemScript _gemScript;
   PlayerScript _playerScript;
 
-  // public int highScore;
-  // public List<int> highScoreList = new List<int>();
+  public int highScore = 0;
+
 
 
   Rigidbody _rb;
-  //   public Text gameOverText;
 
   // Start is called before the first frame update
   void Start()
   {
-
+    highScore = PlayerPrefs.GetInt("SCORE", 0);
   }
 
   // Update is called once per frame
@@ -68,14 +67,21 @@ public class ColliderScript : MonoBehaviour
       _rb.useGravity = false;
 
 
-      // GameObject highScore = GameObject.Find("Cube");
-      // _playerScript = highScore.GetComponent<PlayerScript>();
+      GameObject cubeScore = GameObject.Find("Cube");
+      _playerScript = cubeScore.GetComponent<PlayerScript>();
 
-      // highScoreList.Add(_playerScript.score);
 
-      // highScore = highScoreList.Max();
+      if (highScore < _playerScript.score)
+      {
+        highScore = _playerScript.score;
 
-      // print(highScore);
+        PlayerPrefs.SetInt("SCORE", highScore);
+        PlayerPrefs.Save();
+
+      }
+      print(highScore);
     }
+
+
   }
 }
