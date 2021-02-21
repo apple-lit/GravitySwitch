@@ -19,7 +19,6 @@ public class ColliderScript : MonoBehaviour
 
   public int highScore = 0;
 
-
   Rigidbody _rb;
 
   // Start is called before the first frame update
@@ -40,6 +39,7 @@ public class ColliderScript : MonoBehaviour
     {
       Debug.Log("GameOver");
       hasEnded = true;
+      // print(hasEnded);
       Instantiate(particleObject, this.transform.position, Quaternion.identity);
       GameObject[] stop = GameObject.FindGameObjectsWithTag("stage");
       GameObject noMoreStage = GameObject.Find("StageManager");
@@ -63,7 +63,7 @@ public class ColliderScript : MonoBehaviour
         _stageMoveScript.speed = 0;
       }
 
-      Destroy(this.gameObject);
+      // Destroy(this.gameObject);
       GameObject childParticle = GameObject.Find("ParticleOnPlayer");
       Destroy(childParticle);
       _rb = GameObject.Find("Cube").GetComponent<Rigidbody>();
