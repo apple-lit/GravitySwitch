@@ -75,10 +75,11 @@ public class ColliderScript : MonoBehaviour
         highScore = _playerScript.score;
 
         PlayerPrefs.SetInt("SCORE", highScore);
-        PlayerPrefs.Save();
+
 
       }
-      // print(highScore);
+      PlayerPrefs.Save();
+      print("your highscore: " + highScore);
     }
 
 

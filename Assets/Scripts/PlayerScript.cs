@@ -8,28 +8,39 @@ public class PlayerScript : MonoBehaviour
   bool gravityUp = false;
   public Text scoreText;
   public int score;
+
+  Rigidbody _rb;
+
+  StartTextManager _startTextManager;
   // Start is called before the first frame update
   void Start()
   {
-
+    GameObject startTextObject = GameObject.Find("StartText");
+    _startTextManager = startTextObject.GetComponent<StartTextManager>();
   }
   // Update is called once per frame
   void Update()
   {
-    if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+    if (_startTextManager.hasStarted == true)
     {
-      if (gravityUp == false)
+      _rb = this.GetComponent<Rigidbody>();
+      _rb.useGravity = true;
+
+      if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
       {
-        Physics.gravity = new Vector3(0, 12, 0);
-        Debug.Log("Gravity Up Mode");
-        gravityUp = true;
-        Debug.Log(gravityUp);
-      }
-      else if (gravityUp == true)
-      {
-        Physics.gravity = new Vector3(0, -12, 0);
-        Debug.Log("Gravity Down Mode");
-        gravityUp = false;
+        if (gravityUp == false)
+        {
+          Physics.gravity = new Vector3(0, 12, 0);
+          Debug.Log("Gravity Up Mode");
+          gravityUp = true;
+          Debug.Log(gravityUp);
+        }
+        else if (gravityUp == true)
+        {
+          Physics.gravity = new Vector3(0, -12, 0);
+          Debug.Log("Gravity Down Mode");
+          gravityUp = false;
+        }
       }
     }
   }

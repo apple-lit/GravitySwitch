@@ -22,18 +22,17 @@ public class StageManagerScript : MonoBehaviour
 
   public float countDown = 4.0f;
 
+  StartTextManager _startTextManager;
+
 
   // ステージ用の配列
   GameObject[] stageTopArray = new GameObject[6];
   GameObject[] stageButtomArray = new GameObject[6];
 
   // Start is called before the first frame update
-  void Start()
-  {
-    // ステージをランダムで取得するための変数
-    // int stageTopNum = Random.Range(0, 6);
-    // int stageButtomNum = Random.Range(0, 6);
 
+  void Awake()
+  {
     // 上側のステージ
     stageTopArray[0] = stageTop01;
     stageTopArray[1] = stageTop02;
@@ -66,18 +65,33 @@ public class StageManagerScript : MonoBehaviour
     Instantiate(stageButtomArray[Random.Range(0, 6)], new Vector3(24, -10, -10), Quaternion.identity);
     Instantiate(stageButtomArray[Random.Range(0, 6)], new Vector3(36, -10, -10), Quaternion.identity);
 
+
+  }
+  void Start()
+  {
+    GameObject startTextObject = GameObject.Find("StartText");
+    _startTextManager = startTextObject.GetComponent<StartTextManager>();
+
   }
 
   // Update is called once per frame
   void Update()
   {
-    countDown -= 1.0f * Time.deltaTime;
-    if (countDown <= 0.0f)
-    {
-      Instantiate(stageTopArray[Random.Range(0, 6)], new Vector3(36, 1, -10), Quaternion.identity);
-      Instantiate(stageButtomArray[Random.Range(0, 6)], new Vector3(36, -10, -10), Quaternion.identity);
-      countDown = 4.0f;
-    }
 
+
+
+    if (_startTextManager.hasStarted == true)
+    {
+
+      countDown -= 1.0f * Time.deltaTime;
+      print(countDown);
+      if (countDown <= 0.0f)
+      {
+        Instantiate(stageTopArray[Random.Range(0, 6)], new Vector3(36, 1, -10), Quaternion.identity);
+        Instantiate(stageButtomArray[Random.Range(0, 6)], new Vector3(36, -10, -10), Quaternion.identity);
+        countDown = 4.0f;
+
+      }
+    }
   }
 }
