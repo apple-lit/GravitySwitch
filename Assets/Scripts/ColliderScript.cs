@@ -15,14 +15,17 @@ public class ColliderScript : MonoBehaviour
   GemScript _gemScript;
   PlayerScript _playerScript;
 
+  public bool hasEnded = false;
+
   public int highScore = 0;
+
 
   Rigidbody _rb;
 
   // Start is called before the first frame update
   void Start()
   {
-    highScore = PlayerPrefs.GetInt("SCORE", 0);
+    // highScore = PlayerPrefs.GetInt("SCORE", 0);
 
   }
 
@@ -36,6 +39,7 @@ public class ColliderScript : MonoBehaviour
     if (this.gameObject.transform.position.x > -24)
     {
       Debug.Log("GameOver");
+      hasEnded = true;
       Instantiate(particleObject, this.transform.position, Quaternion.identity);
       GameObject[] stop = GameObject.FindGameObjectsWithTag("stage");
       GameObject noMoreStage = GameObject.Find("StageManager");
@@ -75,12 +79,17 @@ public class ColliderScript : MonoBehaviour
         highScore = _playerScript.score;
 
         PlayerPrefs.SetInt("SCORE", highScore);
-
+        PlayerPrefs.Save();
 
       }
-      PlayerPrefs.Save();
-      print("your highscore: " + highScore);
+
+      // print("your highscore: " + highScore);
+
+      print(PlayerPrefs.GetInt("SCORE", highScore));
+
+
     }
+
 
 
   }

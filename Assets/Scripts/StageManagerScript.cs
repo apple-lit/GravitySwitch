@@ -84,7 +84,7 @@ public class StageManagerScript : MonoBehaviour
     {
 
       countDown -= 1.0f * Time.deltaTime;
-      print(countDown);
+      // print(countDown);
       if (countDown <= 0.0f)
       {
         Instantiate(stageTopArray[Random.Range(0, 6)], new Vector3(36, 1, -10), Quaternion.identity);

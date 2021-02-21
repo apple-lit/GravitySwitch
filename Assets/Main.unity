@@ -5287,7 +5287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ef5dbe1d19f34290b9f4d5df1454719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startText: {fileID: 1672467970}
+  startText: {fileID: 1672467972}
   hasStarted: 0
 --- !u!1 &1686161447
 GameObject:
@@ -5421,8 +5421,9 @@ GameObject:
   - component: {fileID: 1688109963}
   - component: {fileID: 1688109965}
   - component: {fileID: 1688109964}
+  - component: {fileID: 1688109966}
   m_Layer: 5
-  m_Name: GameOverText
+  m_Name: HighScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5468,7 +5469,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: b9a1f4272ef4442f3b415a5a65504c1d, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -5480,7 +5481,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game Over
+  m_Text: 'HighScore : 0'
 --- !u!222 &1688109965
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5489,6 +5490,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688109962}
   m_CullTransparentMesh: 0
+--- !u!114 &1688109966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688109962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d3e4ab4fb494718adc21e402c70ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1785831353
 GameObject:
   m_ObjectHideFlags: 0

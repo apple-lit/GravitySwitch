@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class StartTextManager : MonoBehaviour
 {
 
-  public GameObject startText;
+  //   public GameObject startText;
+  public Text startText;
   public bool hasStarted = false;
   // Start is called before the first frame update
 
   void Awake()
   {
-    startText = GameObject.Find("StartText");
+    // startText = GameObject.Find("StartText");
   }
   void Start()
   {
@@ -25,7 +26,8 @@ public class StartTextManager : MonoBehaviour
   {
     if (Input.GetMouseButtonDown(0))
     {
-      startText.gameObject.SetActive(false);
+      //   startText.gameObject.SetActive(false);
+      startText.enabled = false;
       hasStarted = true;
     }
   }
