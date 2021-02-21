@@ -45,7 +45,7 @@ public class ColliderScript : MonoBehaviour
       GameObject[] gemsStop = GameObject.FindGameObjectsWithTag("gem");
       GameObject gemManager = GameObject.Find("GemManager");
 
-
+      Destroy(collision.gameObject);
       foreach (var gems in gemsStop)
       {
         _gemScript = gemManager.GetComponent<GemScript>();
