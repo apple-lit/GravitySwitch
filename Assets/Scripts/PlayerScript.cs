@@ -9,6 +9,8 @@ public class PlayerScript : MonoBehaviour
   public Text scoreText;
   public int score;
 
+  public bool hasEnded = false;
+
   Rigidbody _rb;
 
   StartTextManager _startTextManager;

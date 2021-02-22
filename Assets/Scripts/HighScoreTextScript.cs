@@ -9,9 +9,12 @@ public class HighScoreTextScript : MonoBehaviour
   // Start is called before the first frame update
   public Text gameOverText;
   ColliderScript _colliderScript;
+
+  PlayerScript _playerScript;
   void Start()
   {
-
+    GameObject playerHasEnded = GameObject.Find("Cube");
+    _playerScript = playerHasEnded.GetComponent<PlayerScript>();
   }
 
   // Update is called once per frame
@@ -26,13 +29,17 @@ public class HighScoreTextScript : MonoBehaviour
 
     }
 
-    print("hasEnded?" + _colliderScript.hasEnded);
+
+
+    // print("hasEnded?" + _colliderScript.hasEnded);
     // print(_colliderScript.hasEnded);
-    if (_colliderScript.hasEnded == true)
+    if (_playerScript.hasEnded == true)
     {
-      print("hasEnded?" + _colliderScript.hasEnded);
+      //   print("hasEnded?" + _colliderScript.hasEnded);
       //   print(_colliderScript.hasEnded);
-      gameOverText.text = "High Score : " + _colliderScript.highScore.ToString();
+      gameOverText.text = "High Score : " + PlayerPrefs.GetInt("SCORE", _colliderScript.highScore).ToString() + "\n Click anywhere to Restart";
+      //   print(PlayerPrefs.GetInt("SCORE", _colliderScript.highScore));
+
       gameOverText.enabled = true;
       if (Input.GetMouseButtonDown(0))
       {

@@ -15,9 +15,10 @@ public class ColliderScript : MonoBehaviour
   GemScript _gemScript;
   PlayerScript _playerScript;
 
-  public bool hasEnded = false;
+  // public bool hasEnded = false;
 
   public int highScore = 0;
+
 
   Rigidbody _rb;
 
@@ -38,7 +39,7 @@ public class ColliderScript : MonoBehaviour
     if (this.gameObject.transform.position.x > -24)
     {
       Debug.Log("GameOver");
-      hasEnded = true;
+      // hasEnded = true;
       // print(hasEnded);
       Instantiate(particleObject, this.transform.position, Quaternion.identity);
       GameObject[] stop = GameObject.FindGameObjectsWithTag("stage");
@@ -73,7 +74,7 @@ public class ColliderScript : MonoBehaviour
       GameObject cubeScore = GameObject.Find("Cube");
       _playerScript = cubeScore.GetComponent<PlayerScript>();
 
-
+      _playerScript.hasEnded = true;
       if (highScore < _playerScript.score)
       {
         highScore = _playerScript.score;
