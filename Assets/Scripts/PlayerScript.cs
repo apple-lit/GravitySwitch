@@ -25,6 +25,8 @@ public class PlayerScript : MonoBehaviour
   {
     if (_startTextManager.hasStarted == true)
     {
+      GameObject particleIsOn = this.transform.Find("ParticleOnPlayer").gameObject;
+      particleIsOn.gameObject.SetActive(true);
       _rb = this.GetComponent<Rigidbody>();
       _rb.useGravity = true;
 
@@ -45,6 +47,7 @@ public class PlayerScript : MonoBehaviour
         }
       }
     }
+
   }
 
 
